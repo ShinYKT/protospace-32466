@@ -1,0 +1,12 @@
+<div class="card">
+  <%= image_tag prototype.image, class: 'card__img' if prototype.image.attached? %>
+  <div class="card__body">
+    <%= link_to prototype.title, prototype_path(prototype.id), class: :card__title%>
+    <p class="card__summary">
+      <%= prototype.concept %>
+    </p>
+    <% if current_user %>
+      <%= link_to prototype.user.name, "/users/#{current_user.id}", class: :card__user %>
+    <% end %>  
+  </div>
+</div>
