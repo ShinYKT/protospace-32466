@@ -8,9 +8,6 @@ class CommentsController < ApplicationController
     end
   end
 
-  def show
-    @comments = Comment.all(params:[prototype_id])
-  end
 
  private
   def comment_params 
