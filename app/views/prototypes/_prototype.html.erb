@@ -5,8 +5,6 @@
     <p class="card__summary">
       <%= prototype.concept %>
     </p>
-    <% if current_user %>
-      <%= link_to prototype.user.name, user_path(prototype.user_id), class: :card__user %>
-    <% end %>  
+      <%= link_to "#{prototype.user.name}さん", user_path(prototype.user_id), class: :card__user %> 
   </div>
 </div>
