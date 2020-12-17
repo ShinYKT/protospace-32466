@@ -1,5 +1,5 @@
 class PrototypesController < ApplicationController
-
+  before_action :authenticate_user!, only: [:edit]
   def index
     @prototypes = Prototype.all
   end
@@ -28,6 +28,12 @@ class PrototypesController < ApplicationController
     unless @prototype.user_id == current_user.id
       redirect_to action: :index
     end
+
+    if @current_user == nil
+      redirect_to　new_user_session_path
+    end
+
+
   end
 
   def update
