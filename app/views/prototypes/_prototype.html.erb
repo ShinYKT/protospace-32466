@@ -6,7 +6,7 @@
       <%= prototype.concept %>
     </p>
     <% if current_user %>
-      <%= link_to prototype.user.name, "/users/#{current_user.id}", class: :card__user %>
+      <%= link_to prototype.user.name, user_path(prototype.user_id), class: :card__user %>
     <% end %>  
   </div>
 </div>
